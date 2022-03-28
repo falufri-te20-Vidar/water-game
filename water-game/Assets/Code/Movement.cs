@@ -11,24 +11,21 @@ public class Movement : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Rigidbody2D playerRigidBody;
     [SerializeField] private GameObject player;
+
     [SerializeField] private float jumpForce;
+    [SerializeField] private float moveForce;
 
-    private bool canJump = false;
 
 
+    private Vector3 startPos;
 
     void Start()
     {
-        
+        startPos = transform.position;
     }
 
     // Update is called once per frame
-    /*void Update()
-    {
-        
-    }*/
-
-    private void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(jumpKey))
         {
@@ -36,21 +33,39 @@ public class Movement : MonoBehaviour
                 playerRigidBody.AddForce(Vector2.up * jumpForce);
         }
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = startPos;
+            playerRigidBody.velocity = Vector2.zero;
+        }
+            
+        
+    }
+
+    private void FixedUpdate()
+    {
+        
+
         if (Input.GetKey(moveLeftKey))
         {
-
+            playerRigidBody.AddForce(Vector2.left * moveForce);
         }
 
         if (Input.GetKey(moveRightKey))
         {
-
+            playerRigidBody.AddForce(Vector2.right * moveForce);
         }
+
+        
     }
 
 
     private bool Groundcheck()
     {
-        var collision = Physics2D.OverlapBox(player.transform.position + new Vector3(0f, -0.1f, 0f), player.transform.localScale, 0f);
+        Vector2 newSize = player.transform.localScale;
+        newSize.x *= 1f;
+
+        var collision = Physics2D.OverlapBox(player.transform.position + new Vector3(0f, -1f, 0f), newSize, 0f);
 
         if (collision == null)
             return false;
