@@ -1,4 +1,0 @@
-﻿interface IPowerUp
-{
-    void Throw();
-}
