@@ -1,4 +1,4 @@
-﻿public class TrashPower : PowerUp, IPowerUp
+﻿public class TrashPower : PowerUp
 {
     public void Throw()
     {
