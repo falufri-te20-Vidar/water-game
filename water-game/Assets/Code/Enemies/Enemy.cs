@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private GameObject thisEnemy;
 
     [SerializeField] private LayerMask trashMask;
 
@@ -20,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     private void CheckCollision()
     {
-        var collisions = Physics2D.OverlapBoxAll(thisEnemy.transform.position, thisEnemy.transform.localScale, 0f);
+        var collisions = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0f);
 
         foreach (var collision in collisions)
         {
