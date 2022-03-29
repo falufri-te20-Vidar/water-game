@@ -21,10 +21,12 @@ public class CameraCode : MonoBehaviour
         if (player.transform.position.x > camera.transform.position.x + cameraOffset)
         {
             MoveCamera(new Vector3(cameraVelocityModifier, 0f, 0f));
+            Debug.Log("Camera Right");
         }
         else if (player.transform.position.x < camera.transform.position.x - cameraOffset)
         {
-            MoveCamera(new Vector3(cameraVelocityModifier, 0f, 0f));
+            MoveCamera(new Vector3(-cameraVelocityModifier, 0f, 0f));
+            Debug.Log("Camera Left");
         }
     }
 

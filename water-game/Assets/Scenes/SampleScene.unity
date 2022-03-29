@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -239,6 +240,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018b58b149b4f4b4283926454cd06dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1148193609}
+  camera: {fileID: 519420028}
+  cameraOffset: 10
+  cameraVelocityModifier: 5
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -754,8 +771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e2389bdb2aaa34faa4048ae28cdd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpKey1: 0
-  jumpKey2: 0
+  jumpKey1: 119
+  jumpKey2: 32
   moveLeftKey: 97
   moveRightKey: 100
   groundMask:
@@ -765,8 +782,8 @@ MonoBehaviour:
   player: {fileID: 1148193609}
   jumpForce: 7
   moveForce: 0.3
-  friction: 0
-  maxSpeed: 0
+  friction: 0.85
+  maxSpeed: 6
 --- !u!61 &1148193612
 BoxCollider2D:
   m_ObjectHideFlags: 0
