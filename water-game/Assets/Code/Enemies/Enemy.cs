@@ -28,7 +28,11 @@ public class Enemy : MonoBehaviour
 
     private void CheckForPlayerCollision()
     {
-        if (Player.Instance.playerCollider)
+        if (Player.Instance.playerCollider == null)
+        {
+            return;
+        }
+
         if (bottomCollider.IsTouching(Player.Instance.playerCollider))
         {
             Player.Instance.DamagePlayer();
