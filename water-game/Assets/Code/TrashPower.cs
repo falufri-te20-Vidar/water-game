@@ -19,11 +19,11 @@ public class TrashPower : PowerUp
         GameObject Trashball = Instantiate(powerUpPrefab, player.transform.position, Quaternion.identity,null);
         if(movement.GetComponent<Movement>().facingRight == true)
         {
-            Trashball.GetComponent<TrashBall>().SetDiretion(Vector3.right);
+            Trashball.GetComponent<TrashBall>().SetDirection(Vector3.right);
         }
         else
         {
-            Trashball.GetComponent<TrashBall>().SetDiretion(Vector3.left);
+            Trashball.GetComponent<TrashBall>().SetDirection(Vector3.left);
         }
     }
 }
