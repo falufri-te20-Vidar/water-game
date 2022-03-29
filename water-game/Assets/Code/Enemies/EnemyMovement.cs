@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    
+
     public float velocity;
     public float margin;
 
@@ -56,4 +58,6 @@ public class EnemyMovement : MonoBehaviour
     {
         return b.x - a.x;
     }
+
+    
 }

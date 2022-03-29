@@ -11,7 +11,6 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Rigidbody2D playerRigidBody;
-    [SerializeField] private GameObject player;
 
     [SerializeField] private float jumpForce;
     [SerializeField] private float moveForce;
@@ -21,12 +20,12 @@ public class Movement : MonoBehaviour
 
     public bool facingRight = true;
 
+    
 
-    private Vector3 startPos;
 
     void Start()
     {
-        startPos = transform.position;
+
     }
 
     // Update is called once per frame
@@ -37,15 +36,6 @@ public class Movement : MonoBehaviour
             if (Groundcheck())
                 Accelerate(Vector2.up * jumpForce);
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Debug.Log("Speed: " + playerRigidBody.velocity.x);
-            transform.position = startPos;
-            playerRigidBody.velocity = Vector2.zero;
-        }
-            
-        
     }
 
     private void FixedUpdate()
@@ -74,7 +64,7 @@ public class Movement : MonoBehaviour
 
     private bool Groundcheck()
     {
-        var collisions = Physics2D.OverlapBoxAll(player.transform.position + new Vector3(0f, 0.1f, 0f), player.transform.localScale, 0f);
+        var collisions = Physics2D.OverlapBoxAll(transform.position + new Vector3(0f, 0.1f, 0f), transform.localScale, 0f);
 
         foreach (var collision in collisions)
         {

@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private LayerMask trashMask;
 
+    [SerializeField] BoxCollider2D topCollider;
+    [SerializeField] BoxCollider2D bottomCollider;
+
     void Start()
     {
         
@@ -14,24 +17,24 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        CheckCollision();
+        CheckForPlayerCollision();
     }
 
-    private void CheckCollision()
-    {
-        var collisions = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0f);
-
-        foreach (var collision in collisions)
-        {
-            if (collision.IsTouchingLayers(trashMask))
-            {
-                Die();
-            }
-        }
-    }
 
     private void Die()
     {
         Destroy(this.gameObject);
+    }
+
+    private void CheckForPlayerCollision()
+    {
+        if (bottomCollider.IsTouching(Player.Instance.playerCollider))
+        {
+            Player.Instance.DamagePlayer();
+        }
+        else if (topCollider.IsTouching(Player.Instance.playerCollider))
+        {
+            Die();
+        }
     }
 }

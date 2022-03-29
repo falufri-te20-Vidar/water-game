@@ -3,7 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Player : MonoBehaviour, IPlayer
 {
+    public static Player Instance;
     public PowerUp currentPowerUp { get; set; }
+
+    [SerializeField] private Rigidbody2D playerRigidbody;
+
+    public Collider2D playerCollider;
+
+    private Vector3 startPos;
+
+    private void Start()
+    {
+        Instance = this;
+        startPos = transform.position;
+    }
 
     public void ApplyPowerEffect(PowerUp powerUp)
     {
@@ -26,5 +39,21 @@ public class Player : MonoBehaviour, IPlayer
         {
             UseEffect();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            KillPlayer();
+        }
+    }
+
+    public void DamagePlayer()
+    {
+        KillPlayer();
+    }
+
+    public void KillPlayer()
+    {
+        transform.position = startPos;
+        playerRigidbody.velocity = Vector2.zero;
     }
 }
