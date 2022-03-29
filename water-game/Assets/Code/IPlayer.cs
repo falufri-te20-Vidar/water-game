@@ -3,4 +3,6 @@
     PowerUp currentPowerUp { get; set; }
 
     void ApplyPowerEffect(PowerUp powerUp);
+
+    void UseEffect();
 }

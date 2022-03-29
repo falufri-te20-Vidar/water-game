@@ -2,29 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour
+abstract public class PowerUp : MonoBehaviour
 {
-    public GameObject powerUp;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void PickUp()
-    {
-        powerUp.SetActive(false);
-    }
+    public PowerUp powerUp;
+    public Player player;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        powerUp.gameObject.SetActive(false);
+        player.ApplyPowerEffect(powerUp);
     }
+
+    abstract public void Use();
 }
