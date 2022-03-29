@@ -1,6 +1,6 @@
 ﻿public class TrashPower : PowerUp
 {
-    public void Throw()
+    override public void Use()
     {
 
     }
