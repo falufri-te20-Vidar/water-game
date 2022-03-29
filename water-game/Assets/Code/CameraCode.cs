@@ -16,22 +16,26 @@ public class CameraCode : MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (player.transform.position.x > camera.transform.position.x + cameraOffset)
+        float playerX = player.transform.position.x;
+        float cameraX = camera.transform.position.x;
+        
+        if (playerX < cameraX - cameraOffset)
         {
-            MoveCamera(new Vector3(cameraVelocityModifier, 0f, 0f));
-            Debug.Log("Camera Right");
-        }
-        else if (player.transform.position.x < camera.transform.position.x - cameraOffset)
-        {
-            MoveCamera(new Vector3(-cameraVelocityModifier, 0f, 0f));
+            MoveCamera((playerX - cameraX) * cameraVelocityModifier);
             Debug.Log("Camera Left");
+        }
+        else if (player.transform.position.x > camera.transform.position.x + cameraOffset)
+        {
+            MoveCamera((playerX - cameraX) * cameraVelocityModifier);
+            Debug.Log("Camera Right");
         }
     }
 
-    private void MoveCamera(Vector3 cameraVelocity)
+    private void MoveCamera(float cameraSpeed)
     {
-        camera.transform.position += cameraVelocity;
+        Vector3 velocity = new Vector3(cameraSpeed, 0f, 0f);
+        camera.transform.position += velocity;
     }
 }

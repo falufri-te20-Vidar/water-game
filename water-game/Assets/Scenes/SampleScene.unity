@@ -255,8 +255,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1148193609}
   camera: {fileID: 519420028}
-  cameraOffset: 10
-  cameraVelocityModifier: 5
+  cameraOffset: 3
+  cameraVelocityModifier: 0.1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
