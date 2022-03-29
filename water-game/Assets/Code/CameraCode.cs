@@ -24,12 +24,10 @@ public class CameraCode : MonoBehaviour
         if (playerX < cameraX - cameraOffset)
         {
             MoveCamera((playerX - cameraX) * cameraVelocityModifier);
-            Debug.Log("Camera Left");
         }
         else if (player.transform.position.x > camera.transform.position.x + cameraOffset)
         {
             MoveCamera((playerX - cameraX) * cameraVelocityModifier);
-            Debug.Log("Camera Right");
         }
     }
 
