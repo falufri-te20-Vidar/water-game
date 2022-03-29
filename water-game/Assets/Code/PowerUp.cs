@@ -9,8 +9,11 @@ abstract public class PowerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        powerUp.gameObject.SetActive(false);
-        player.ApplyPowerEffect(powerUp);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            powerUp.gameObject.SetActive(false);
+            player.ApplyPowerEffect(powerUp);
+        }
     }
 
     abstract public void Use();
