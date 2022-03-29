@@ -70,16 +70,18 @@ public class Movement : MonoBehaviour
 
     private bool Groundcheck()
     {
-        var collision = Physics2D.OverlapBox(player.transform.position + new Vector3(0f, 0.1f, 0f), player.transform.localScale, 0f);
+        var collisions = Physics2D.OverlapBoxAll(player.transform.position + new Vector3(0f, 0.1f, 0f), player.transform.localScale, 0f);
 
-        if (collision == null)
-            return false;
-
-        if (collision.IsTouchingLayers(groundMask))
+        foreach (var collision in collisions)
         {
-            return true;
-        }
+            if (collision == null)
+                return false;
 
+            if (collision.IsTouchingLayers(groundMask))
+            {
+                return true;
+            }
+        }
         return false;
     }
 
