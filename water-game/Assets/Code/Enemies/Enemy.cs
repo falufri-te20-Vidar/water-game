@@ -21,20 +21,21 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void Die()
+    private void Liqify()
     {
         Destroy(this.gameObject);
     }
 
     private void CheckForPlayerCollision()
     {
+        if (Player.Instance.playerCollider)
         if (bottomCollider.IsTouching(Player.Instance.playerCollider))
         {
             Player.Instance.DamagePlayer();
         }
         else if (topCollider.IsTouching(Player.Instance.playerCollider))
         {
-            Die();
+            Liqify();
         }
     }
 }
