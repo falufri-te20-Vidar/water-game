@@ -19,6 +19,8 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private float maxSpeed;
 
+    public bool facingRight = true;
+
 
     private Vector3 startPos;
 
@@ -50,11 +52,13 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(moveLeftKey))
         {
+            facingRight = false;
             Accelerate(Vector2.left * moveForce);
         }
 
         if (Input.GetKey(moveRightKey))
         {
+            facingRight = true;
             Accelerate(Vector2.right * moveForce);
         }
 
