@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrashBall : MonoBehaviour
 {
     [SerializeField] private float SpeedModifier = 40.0f;
+    public Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,8 @@ public class TrashBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.right * Time.deltaTime * SpeedModifier;
+        transform.position += direction * Time.deltaTime * SpeedModifier;
     }
+
+    public void SetDiretion(Vector3 Dir) {direction = Dir;}
 }
