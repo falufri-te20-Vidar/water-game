@@ -58,7 +58,8 @@ public class Movement : MonoBehaviour
             Accelerate(Vector2.right * moveForce);
         }
 
-        if (Input.GetKey(moveLeftKey) == false && Input.GetKey(moveRightKey) == false)
+        if (Input.GetKey(moveLeftKey) == false && Input.GetKey(moveRightKey) == false || // Ingen knapp
+            Input.GetKey(moveLeftKey) == true && Input.GetKey(moveRightKey) == true)     // Båda knappar
         {
             if (Groundcheck())
             {

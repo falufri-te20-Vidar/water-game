@@ -10,8 +10,21 @@ public class Player : MonoBehaviour, IPlayer
         currentPowerUp = powerUp;
     }
 
+    public void RemovePowerEffect()
+    {
+        currentPowerUp = null;
+    }
+
     public void UseEffect()
     {
         currentPowerUp.Use();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.E) && currentPowerUp != null)
+        {
+            UseEffect();
+        }
     }
 }
