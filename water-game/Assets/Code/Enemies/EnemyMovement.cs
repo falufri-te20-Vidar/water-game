@@ -4,28 +4,56 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float vel;
+    public float velocity;
+    public float margin;
 
-    [SerializeField]
-    private Vector3[] positions;
+    public Transform startWaypoint, endWaypoint;
 
-    private int index;
+    private Transform currentWaypoint;
+    private bool goingRight;
+
+    private Vector3 prevPosition;
+
+    private void Start()
+    {
+        currentWaypoint = startWaypoint;
+        goingRight = false;
+    }
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, positions[index], Time.deltaTime * vel);
+        var position = transform.position;
 
-        if (transform.position == positions[index])
+        if (position.x <= startWaypoint.position.x && goingRight == false)
         {
-            if (index == positions.Length - 1)
-            {
-                index = 0;
-            }
-            else
-            {
-                index++;
-            }
+            goingRight = true;
+            Flip();
+            currentWaypoint = endWaypoint;
         }
+
+        else if (position.x >= endWaypoint.position.x && goingRight == true)
+        {
+            goingRight = false;
+            Flip();
+            currentWaypoint = startWaypoint;
+        }
+
+
+        position = Vector2.MoveTowards(position, currentWaypoint.position, Time.deltaTime * velocity);
+
+        transform.position = position;
+        prevPosition = position;
+    }
+
+    private void Flip()
+    {
+        Vector3 scale = transform.localScale;
+        scale.x *=  GetSloppyVelocity(transform.position, prevPosition) > 0f ? 1f : -1f;
+        transform.localScale = scale;
+    }
+
+    private float GetSloppyVelocity(Vector3 a, Vector3 b)
+    {
+        return b.x - a.x;
     }
 }
