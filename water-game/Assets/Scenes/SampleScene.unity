@@ -255,8 +255,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1148193609}
   camera: {fileID: 519420028}
+<<<<<<< Updated upstream
   cameraOffset: 3
   cameraVelocityModifier: 0.02
+=======
+  cameraOffset: 10
+  cameraVelocityModifier: 1
+>>>>>>> Stashed changes
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
