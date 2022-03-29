@@ -5,4 +5,6 @@
     void ApplyPowerEffect(PowerUp powerUp);
 
     void UseEffect();
+
+    void RemovePowerEffect();
 }
