@@ -74,9 +74,6 @@ public class Movement : MonoBehaviour
 
         foreach (var collision in collisions)
         {
-            if (collision == null)
-                return false;
-
             if (collision.IsTouchingLayers(groundMask))
             {
                 return true;
