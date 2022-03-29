@@ -19,5 +19,19 @@ public class TrashBall : MonoBehaviour
         transform.eulerAngles += Vector3.forward * 200 * Time.deltaTime;
     }
 
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Trash"))
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
+    }
+
     public void SetDirection(Vector3 Dir) {direction = Dir;}
 }
