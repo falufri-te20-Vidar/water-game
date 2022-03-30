@@ -51,6 +51,10 @@ public class Enemy : MonoBehaviour
         animator.SetBool("Splash", true);
         this.GetComponent<EnemyMovement>().velocity = 0f;
         vulnerable = false;
+        foreach (var collider in colliders)
+        {
+            collider.isTrigger = true;
+        }
     }
 
     private void CheckForPlayerCollision()
