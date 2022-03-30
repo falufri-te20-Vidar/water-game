@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
             {
                 animator.SetBool("Splash", false);
                 timer = 0f;
+                this.GetComponent<EnemyMovement>().velocity = 2f;
+                this.GetComponent<BoxCollider2D>().isTrigger = false;
             }
         }
 
@@ -37,6 +39,8 @@ public class Enemy : MonoBehaviour
     private void Liqify()
     {
         animator.SetBool("Splash", true);
+        this.GetComponent<EnemyMovement>().velocity = 0f;
+        this.GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
     private void CheckForPlayerCollision()
@@ -46,7 +50,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        if (bottomCollider.IsTouching(Player.Instance.playerCollider))
+        if (bottomCollider.IsTouching(Player.Instance.playerCollider) && animator.GetBool("Splash") == false)
         {
             Player.Instance.DamagePlayer();
         }

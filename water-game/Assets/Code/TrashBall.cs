@@ -6,6 +6,7 @@ public class TrashBall : MonoBehaviour
 {
     [SerializeField] private float SpeedModifier = 10.0f;
     public Vector3 direction;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class TrashBall : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Trash"))
+        if (collision.gameObject.CompareTag("Trash") && animator.GetBool("Splash") == false)
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
