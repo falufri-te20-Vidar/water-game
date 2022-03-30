@@ -80,3 +80,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: 8031faf08f338d14eb92d2d3e40a1ad2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
