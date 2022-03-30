@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] BoxCollider2D topCollider;
     [SerializeField] BoxCollider2D bottomCollider;
 
+    public Animator animator;
+    private float timer;
+
     void Start()
     {
         
@@ -18,12 +21,22 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         CheckForPlayerCollision();
+        if(animator.GetBool("Splash") == true)
+        {
+            timer +=  Time.deltaTime;
+            if(timer > 5)
+            {
+                animator.SetBool("Splash", false);
+                timer = 0f;
+            }
+        }
+
     }
 
 
     private void Liqify()
     {
-        Destroy(this.gameObject);
+        animator.SetBool("Splash", true);
     }
 
     private void CheckForPlayerCollision()
