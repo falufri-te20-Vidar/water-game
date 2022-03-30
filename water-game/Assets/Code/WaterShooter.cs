@@ -6,9 +6,10 @@ public class WaterShooter : Enemy
 {
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Rigidbody2D rigid_body;
+    [SerializeField] private GameObject waterProjectile;
 
     [SerializeField] private int jumpRate;
-    [SerializeField] private float shootRate;
+    [SerializeField] private int shootRate;
     [SerializeField] private float jumpSpeed;
 
     // Start is called before the first frame update
@@ -23,13 +24,22 @@ public class WaterShooter : Enemy
     void FixedUpdate()
     {
         CheckForPlayerCollision();
-        if (Random.Range(0, jumpRate) == 0)
+        if (Random.Range(0, jumpRate) == 0 && Groundcheck())
         {
-            if (Groundcheck())
-            {
-                Jump();
-            }
+            Jump();
         }
+        if (Random.Range(0, shootRate) == 0)
+        {
+            Shoot();
+        }
+    }
+
+    private void Shoot()
+    {
+        GameObject go = Instantiate(waterProjectile, transform.position, Quaternion.identity, null);
+        FindObjectOfType<AudioManager>().Play("Shoot");
+        go.GetComponent<WaterProjectile>().SetDirection(false);
+        
     }
 
     private void Jump()

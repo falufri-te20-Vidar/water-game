@@ -183,8 +183,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   rigid_body: {fileID: 6221491618806021738}
+  waterProjectile: {fileID: 7937005182682763279, guid: 75d15c053f36b334bab809064e1f8ef4, type: 3}
   jumpRate: 200
-  shootRate: 0
+  shootRate: 50
   jumpSpeed: 6
 --- !u!95 &7007744890124243146
 Animator:

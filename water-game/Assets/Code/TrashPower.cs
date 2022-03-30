@@ -16,11 +16,11 @@ public class TrashPower : PowerUp
         FindObjectOfType<AudioManager>().Play("Shoot");
         if (player.GetComponent<Movement>().facingRight == true)
         {
-            Trashball.GetComponent<TrashBall>().facingRight = true;
+            Trashball.GetComponent<TrashBall>().SetDirection(true);
         }
         else
         {
-            Trashball.GetComponent<TrashBall>().facingRight = false;
+            Trashball.GetComponent<TrashBall>().SetDirection(false);
         }
     }
 }
