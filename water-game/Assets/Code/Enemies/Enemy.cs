@@ -7,8 +7,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private LayerMask trashMask;
 
-    [SerializeField] BoxCollider2D topCollider;
-    [SerializeField] BoxCollider2D bottomCollider;
+    [SerializeField] public BoxCollider2D topCollider;
+    [SerializeField] public BoxCollider2D bottomCollider;
 
     public Animator animator;
     public bool vulnerable = true;
@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void Liqify()
+    public virtual void Liqify()
     {
         animator.SetBool("Splash", true);
         this.GetComponent<EnemyMovement>().velocity = 0f;
@@ -62,7 +62,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void CheckForPlayerCollision()
+
+
+    protected virtual void CheckForPlayerCollision()
     {
         if (Player.Instance.playerCollider == null)
         {

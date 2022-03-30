@@ -17,9 +17,12 @@ public class WaterShooter : Enemy
         
     }
 
+
+
     // Update is called once per frame
     void FixedUpdate()
     {
+        CheckForPlayerCollision();
         if (Random.Range(0, jumpRate) == 0)
         {
             if (Groundcheck())
@@ -49,5 +52,27 @@ public class WaterShooter : Enemy
             }
         }
         return false;
-    }   
+    }
+
+    protected override void CheckForPlayerCollision()
+    {
+        if (Player.Instance.playerCollider == null)
+        {
+            return;
+        }
+
+        if (bottomCollider.IsTouching(Player.Instance.playerCollider))
+        {
+            Player.Instance.DamagePlayer();
+        }
+        else if (topCollider.IsTouching(Player.Instance.playerCollider))
+        {
+            Liqify();
+        }
+    }
+
+    public override void Liqify()
+    {
+        CheckLiquify();
+    }
 }
