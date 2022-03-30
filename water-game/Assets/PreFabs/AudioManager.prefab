@@ -48,19 +48,29 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 651f41839fd4b354385ec14521775c4b, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: PowerUp
     clip: {fileID: 8300000, guid: 43a89af58b92fec4ba0247e55ef0d6a7, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: Shoot
     clip: {fileID: 8300000, guid: 877f7993fdde6194c8c5e4f011d70d16, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: HitSound
     clip: {fileID: 8300000, guid: bac2bf66751fa884ab8225460a3431d0, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: theme
+    clip: {fileID: 8300000, guid: b2f4c2b72c1b4a14991a18e99af68ee7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
