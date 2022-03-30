@@ -13,7 +13,8 @@ public class TrashPower : PowerUp
     private void CreateProjectile()
     {
         GameObject Trashball = Instantiate(powerUpPrefab, player.transform.position, Quaternion.identity,null);
-        if(player.GetComponent<Movement>().facingRight == true)
+        FindObjectOfType<AudioManager>().Play("Shoot");
+        if (player.GetComponent<Movement>().facingRight == true)
         {
             Trashball.GetComponent<TrashBall>().SetDirection(Vector3.right);
         }
