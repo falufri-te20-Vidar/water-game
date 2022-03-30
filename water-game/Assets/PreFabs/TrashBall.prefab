@@ -134,5 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a4f081b322a0748a2b73d92a98464b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedModifier: 10
-  direction: {x: 0, y: 0, z: 0}
+  rigid_body: {fileID: 4023545331856266158}
+  facingRight: 0
+  speed: 15
+  rotationRate: 1000

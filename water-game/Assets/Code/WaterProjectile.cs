@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class WaterProjectile : Projectile
 {
-    [SerializeField] private Rigidbody2D rigid_body;
-
-    [SerializeField] bool facingLeft;
-    [SerializeField] float speed;
-
     void Update()
     {
         Rotate();
@@ -25,7 +20,7 @@ public class WaterProjectile : Projectile
     {
         if (collision.tag == "Player")
         {
-            //Damage player
+            Player.Instance.DamagePlayer();
         }
     }
 
