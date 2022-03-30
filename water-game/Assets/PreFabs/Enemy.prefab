@@ -203,6 +203,7 @@ MonoBehaviour:
   topCollider: {fileID: 3883229360166713243}
   bottomCollider: {fileID: 4333913599201464427}
   animator: {fileID: 663711297347241317}
+  vulnerable: 1
 --- !u!95 &663711297347241317
 Animator:
   serializedVersion: 3
