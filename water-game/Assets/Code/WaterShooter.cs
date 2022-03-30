@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterEnemy : Enemy
+public class WaterShooter : Enemy
 {
     [SerializeField] private LayerMask groundMask;
-    [SerializeField] private float jumpRate;
+    [SerializeField] private Rigidbody2D rigid_body;
+
+    [SerializeField] private int jumpRate;
     [SerializeField] private float shootRate;
+    [SerializeField] private float jumpSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +31,7 @@ public class WaterEnemy : Enemy
 
     private void Jump()
     {
-        
+        rigid_body.velocity += Vector2.up * jumpSpeed;
     }
 
     private bool Groundcheck()
