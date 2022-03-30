@@ -12,6 +12,20 @@ public class WaterProjectile : Projectile
         }
     }
 
+    public override void SetDirection(bool facingRight)
+    {
+        speedY = Random.Range(-speedY, speedY);
+
+        if (facingRight)
+        {
+            rigid_body.velocity = new Vector2(speedX, speedY);
+        }
+        else
+        {
+            rigid_body.velocity = new Vector2(-speedX, speedY);
+        }
+    }
+
     private void Update()
     {
         if (transform.position.x < -100f)
