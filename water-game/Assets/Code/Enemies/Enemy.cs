@@ -55,6 +55,11 @@ public class Enemy : MonoBehaviour
         {
             collider.isTrigger = true;
         }
+        if (!hasPlayed)
+        {
+            FindObjectOfType<AudioManager>().Play("Squish");
+            hasPlayed = true;
+        }
     }
 
     private void CheckForPlayerCollision()
