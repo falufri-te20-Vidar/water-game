@@ -81,7 +81,8 @@ public class Movement : MonoBehaviour
 
     private void ApplyFriction()
     {
-        playerRigidBody.velocity *= friction;
+        float velocityX = playerRigidBody.velocity.x * friction;
+        playerRigidBody.velocity = new Vector2(velocityX, playerRigidBody.velocity.y);
     }
 
     private void Accelerate(Vector2 acceleration)
