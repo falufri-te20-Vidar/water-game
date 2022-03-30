@@ -28,6 +28,7 @@ public class TrashBall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trash") && collision.GetComponent<Enemy>().vulnerable == true)
         {
+            FindObjectOfType<AudioManager>().Play("EnemyDeath");
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
