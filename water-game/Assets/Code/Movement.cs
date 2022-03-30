@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
 
     public bool facingRight = true;
 
+    public Animator animator;
+
     AudioSource jumpSound;
 
     
@@ -42,7 +44,7 @@ public class Movement : MonoBehaviour
             }
             
         }
-
+        animator.SetFloat("Speed", Mathf.Abs(playerRigidBody.velocity.x));
     }
 
     private void FixedUpdate()

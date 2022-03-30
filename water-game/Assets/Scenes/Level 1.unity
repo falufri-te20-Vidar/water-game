@@ -407,7 +407,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1080,6 +1080,7 @@ MonoBehaviour:
   friction: 0.85
   maxSpeed: 6
   facingRight: 1
+  animator: {fileID: 979923778}
 --- !u!50 &979923775
 Rigidbody2D:
   serializedVersion: 4
@@ -1680,7 +1681,7 @@ Transform:
   m_Children:
   - {fileID: 1206956524}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &517496994140741296
 Transform:
