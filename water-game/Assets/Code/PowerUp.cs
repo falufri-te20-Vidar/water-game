@@ -5,14 +5,21 @@ using UnityEngine;
 abstract public class PowerUp : MonoBehaviour
 {
     public PowerUp powerUp;
-    public Player player;
+    public GameObject player;
+    public Player playerCode;
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+        playerCode = player.GetComponent<Player>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             powerUp.gameObject.SetActive(false);
-            player.ApplyPowerEffect(powerUp);
+            playerCode.ApplyPowerEffect(powerUp);
         }
     }
 
