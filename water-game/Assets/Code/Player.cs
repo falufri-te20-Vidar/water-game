@@ -48,6 +48,7 @@ public class Player : MonoBehaviour, IPlayer
 
     public void DamagePlayer()
     {
+        FindObjectOfType<AudioManager>().Play("HitSound");
         KillPlayer();
     }
 
