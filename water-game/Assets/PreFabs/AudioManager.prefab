@@ -54,13 +54,3 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Shoot
-    clip: {fileID: 8300000, guid: 877f7993fdde6194c8c5e4f011d70d16, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-  - name: HitSound
-    clip: {fileID: 8300000, guid: bac2bf66751fa884ab8225460a3431d0, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
