@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//[ExecuteInEditMode]
 public class PlatformBounds : MonoBehaviour
 {
     [SerializeField] private BoxCollider2D groundBox;
