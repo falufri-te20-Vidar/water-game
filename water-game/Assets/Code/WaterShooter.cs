@@ -12,15 +12,17 @@ public class WaterShooter : Enemy
     [SerializeField] private int shootRate;
     [SerializeField] private float jumpSpeed;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private bool facingRight;
+
+
+    private void Start()
     {
-        
+        if (facingRight)
+        {
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1f);
+        }
     }
 
-
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         CheckForPlayerCollision();
@@ -37,9 +39,18 @@ public class WaterShooter : Enemy
     private void Shoot()
     {
         GameObject go = Instantiate(waterProjectile, transform.position, Quaternion.identity, null);
-        FindObjectOfType<AudioManager>().Play("Shoot");
-        go.GetComponent<WaterProjectile>().SetDirection(false);
         
+        if (facingRight)
+        {
+            go.GetComponent<WaterProjectile>().SetDirection(true);
+        }
+        else
+        {
+            go.GetComponent<WaterProjectile>().SetDirection(false);
+        }
+
+        FindObjectOfType<AudioManager>().Play("Shoot");
+
     }
 
     private void Jump()
