@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class WaterProjectile : Projectile
 {
-    void Update()
-    {
-        Rotate();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -24,5 +12,11 @@ public class WaterProjectile : Projectile
         }
     }
 
-
+    private void Update()
+    {
+        if (transform.position.x < -100f)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

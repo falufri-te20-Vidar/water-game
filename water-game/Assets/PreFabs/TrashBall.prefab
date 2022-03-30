@@ -109,7 +109,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4279877166706860017}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -135,6 +135,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigid_body: {fileID: 4023545331856266158}
-  facingRight: 0
   speed: 15
   rotationRate: 1000

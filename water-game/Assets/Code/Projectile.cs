@@ -9,12 +9,18 @@ public class Projectile : MonoBehaviour
 
     [SerializeField] protected Rigidbody2D rigid_body;
 
-    [SerializeField] public bool facingRight;
     [SerializeField] protected float speed;
     [SerializeField] protected float rotationRate;
 
+    //public bool facingRight;
+
     // Start is called before the first frame update
     void Start()
+    {
+        
+    }
+
+    public void SetDirection(bool facingRight)
     {
         if (facingRight)
         {
@@ -24,6 +30,7 @@ public class Projectile : MonoBehaviour
         {
             rigid_body.velocity = Vector2.left * speed;
         }
+        Debug.Log("speed:"+speed);
     }
 
     public void Rotate()

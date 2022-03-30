@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class TrashBall : Projectile
 {
-    void Update()
-    {
-        Rotate();
-    }
-
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
