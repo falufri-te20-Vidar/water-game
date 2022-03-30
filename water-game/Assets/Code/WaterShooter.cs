@@ -73,6 +73,6 @@ public class WaterShooter : Enemy
 
     public override void Liqify()
     {
-        CheckLiquify();
+        Destroy(gameObject);
     }
 }
