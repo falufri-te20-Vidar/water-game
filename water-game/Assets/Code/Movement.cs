@@ -115,6 +115,4 @@ public class Movement : MonoBehaviour
         playerRigidBody.velocity = new Vector2(xVel, yVel);
         
     }
-
-
 }
