@@ -69,6 +69,11 @@ public class Movement : MonoBehaviour
                 ApplyFriction();
             }
         }
+
+        Vector3 rotation = transform.eulerAngles;
+        rotation.y = facingRight ? 0f : 180f;
+        transform.eulerAngles = rotation;
+
     }
 
     private bool Groundcheck()
