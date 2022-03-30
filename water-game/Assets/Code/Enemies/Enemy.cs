@@ -30,7 +30,6 @@ public class Enemy : MonoBehaviour
                 animator.SetBool("Splash", false);
                 timer = 0f;
                 this.GetComponent<EnemyMovement>().velocity = 2f;
-                this.GetComponent<BoxCollider2D>().isTrigger = false;
                 vulnerable = true;
             }
         }
@@ -42,7 +41,6 @@ public class Enemy : MonoBehaviour
     {
         animator.SetBool("Splash", true);
         this.GetComponent<EnemyMovement>().velocity = 0f;
-        this.GetComponent<BoxCollider2D>().isTrigger = true;
         vulnerable = false;
     }
 
