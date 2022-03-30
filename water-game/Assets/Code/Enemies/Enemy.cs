@@ -14,9 +14,11 @@ public class Enemy : MonoBehaviour
     public bool vulnerable = true;
     private float timer;
 
+    BoxCollider2D[] colliders;
+
     void Start()
     {
-        
+        colliders = GetComponents<BoxCollider2D>();
     }
 
     void FixedUpdate()
@@ -31,6 +33,10 @@ public class Enemy : MonoBehaviour
                 timer = 0f;
                 this.GetComponent<EnemyMovement>().velocity = 2f;
                 vulnerable = true;
+                foreach (var collider in colliders)
+                {
+                    collider.isTrigger = false;
+                }
             }
         }
 
@@ -42,6 +48,11 @@ public class Enemy : MonoBehaviour
         animator.SetBool("Splash", true);
         this.GetComponent<EnemyMovement>().velocity = 0f;
         vulnerable = false;
+
+        foreach(var collider in colliders)
+        {
+            collider.isTrigger = true;
+        }
     }
 
     private void CheckForPlayerCollision()
