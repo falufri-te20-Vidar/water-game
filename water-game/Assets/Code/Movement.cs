@@ -20,12 +20,14 @@ public class Movement : MonoBehaviour
 
     public bool facingRight = true;
 
+    AudioSource jumpSound;
+
     
 
 
     void Start()
     {
-
+        jumpSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,12 +36,19 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(jumpKey1) || Input.GetKeyDown(jumpKey2))
         {
             if (Groundcheck())
+            {
+                FindObjectOfType<AudioManager>().Play("PlayerJump");
                 Accelerate(Vector2.up * jumpForce);
+            }
+            
         }
+
     }
 
     private void FixedUpdate()
     {
+        Vector3 scale = transform.localScale;
+        
         if (Input.GetKey(moveLeftKey))
         {
             facingRight = false;
@@ -100,4 +109,6 @@ public class Movement : MonoBehaviour
         playerRigidBody.velocity = new Vector2(xVel, yVel);
         
     }
+
+
 }

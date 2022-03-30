@@ -59,5 +59,18 @@ public class EnemyMovement : MonoBehaviour
         return b.x - a.x;
     }
 
-    
+
+    //[ContextMenu("Clean")]
+    //public void CleanUp()
+    //{
+    //    var trash = FindObjectsOfType(typeof(EnemyMovement));
+
+    //    if (trash.Length > 1)
+    //    {
+    //        foreach (var shit in trash)
+    //        {
+    //            Destroy(((EnemyMovement)shit).gameObject);
+    //        }
+    //    }
+    //}
 }

@@ -13,6 +13,7 @@ abstract public class PowerUp : MonoBehaviour
         {
             powerUp.gameObject.SetActive(false);
             player.ApplyPowerEffect(powerUp);
+            FindObjectOfType<AudioManager>().Play("PowerUp");
         }
     }
 
