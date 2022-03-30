@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     public bool vulnerable = true;
     private float timer;
+    private bool hasPlayed = false;
 
     BoxCollider2D[] colliders;
 
@@ -24,11 +25,13 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         CheckForPlayerCollision();
+      
         if(animator.GetBool("Splash") == true)
         {
             timer +=  Time.deltaTime;
             if(timer > 5)
             {
+                hasPlayed = false;
                 animator.SetBool("Splash", false);
                 timer = 0f;
                 this.GetComponent<EnemyMovement>().velocity = 2f;
@@ -48,11 +51,6 @@ public class Enemy : MonoBehaviour
         animator.SetBool("Splash", true);
         this.GetComponent<EnemyMovement>().velocity = 0f;
         vulnerable = false;
-
-        foreach(var collider in colliders)
-        {
-            collider.isTrigger = true;
-        }
     }
 
     private void CheckForPlayerCollision()
