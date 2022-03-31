@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[ExecuteInEditMode]
+[ExecuteAlways]
 public class PlatformBounds : MonoBehaviour
 {
     [SerializeField] private BoxCollider2D groundBox;
+    [SerializeField] private BoxCollider2D platformBox;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private float offset;
 
     void Update()
     {
-        float platformX = transform.localScale.x;
+        platformBox.size = spriteRenderer.bounds.size;
+
+        float platformX = spriteRenderer.size.x;
 
         float xSize = platformX - 2 * offset;
-        xSize = xSize / platformX;
 
         float ySize = groundBox.size.y;
 
