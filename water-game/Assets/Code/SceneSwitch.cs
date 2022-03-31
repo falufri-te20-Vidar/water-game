@@ -19,7 +19,7 @@ public class SceneSwitch : MonoBehaviour
 
     private void Update()
     {
-        if (gameObject.name == "Respawn" && animator.GetBool("Open") == true)
+        if (animator.GetBool("Open") == true)
         {
             timer += Time.deltaTime;
             if (timer > 1)
@@ -30,9 +30,5 @@ public class SceneSwitch : MonoBehaviour
             }
         }
 
-        if(gameObject.name == "DeathZones" && animator.GetBool("Open") == true)
-        {
-            SceneManager.LoadScene(thisLevel);
-        }
     }
 }

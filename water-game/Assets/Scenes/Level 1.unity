@@ -436,11 +436,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 473060398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b28f515c33bb8e48b9897f3477d915f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4edf6e279c3eeea439d7764e9ed98822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisLevel: 0
-  animator: {fileID: 3211770461717812386}
 --- !u!61 &473060400
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2189,11 +2187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3211770461203563124, guid: 204f3686c62941e49b03c2c8e7051f4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.99
+      value: 31.07
       objectReference: {fileID: 0}
     - target: {fileID: 3211770461203563124, guid: 204f3686c62941e49b03c2c8e7051f4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3211770461203563124, guid: 204f3686c62941e49b03c2c8e7051f4d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2229,8 +2227,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 204f3686c62941e49b03c2c8e7051f4d, type: 3}
---- !u!95 &3211770461717812386 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3211770461203563123, guid: 204f3686c62941e49b03c2c8e7051f4d, type: 3}
-  m_PrefabInstance: {fileID: 3211770461717812385}
-  m_PrefabAsset: {fileID: 0}
