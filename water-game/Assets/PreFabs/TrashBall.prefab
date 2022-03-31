@@ -136,6 +136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigid_body: {fileID: 4023545331856266158}
   speedX: 15
-  speedY: 2
+  speedY: 0.5
   rotationRate: 1000
   yOffset: 0
