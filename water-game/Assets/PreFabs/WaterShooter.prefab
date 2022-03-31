@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1544363912356885324}
   - component: {fileID: 8514439915770874424}
   - component: {fileID: 1155209124321691206}
+  - component: {fileID: 6555929881372125472}
   - component: {fileID: 4701461755883463832}
   m_Layer: 0
   m_Name: WaterShooter
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2986774267943473705}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.19, y: -0.23, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: -0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -187,6 +188,19 @@ MonoBehaviour:
   jumpRate: 200
   shootRate: 100
   jumpSpeed: 6
+  facingRight: 0
+--- !u!114 &6555929881372125472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986774267943473705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08b12485862fec4b8b5223bd9787ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   facingRight: 0
 --- !u!95 &4701461755883463832
 Animator:

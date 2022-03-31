@@ -16,11 +16,8 @@ public class PlatformBounds : MonoBehaviour
         platformBox.size = spriteRenderer.bounds.size;
 
         float platformX = spriteRenderer.size.x;
-
         float xSize = platformX - 2 * offset;
-
         float ySize = groundBox.size.y;
-
         groundBox.size = new Vector2(xSize, ySize);
     }
 }
