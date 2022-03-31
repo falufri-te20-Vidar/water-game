@@ -8,11 +8,12 @@ public class SceneSwitch : MonoBehaviour
     [SerializeField] private int thisLevel; //Keeps track of which level the player is on
     public Animator animator;
     private float timer;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "Player")
         {
-            animator.SetBool("Open", true);
+            animator.SetBool("Open", true);      
         }
     }
 
@@ -27,6 +28,11 @@ public class SceneSwitch : MonoBehaviour
                 animator.SetBool("Open", false);
                 timer = 0f;
             }
+        }
+
+        if(gameObject.name == "DeathZones" && animator.GetBool("Open") == true)
+        {
+            SceneManager.LoadScene(thisLevel);
         }
     }
 }
