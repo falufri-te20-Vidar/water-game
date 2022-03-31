@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisLevel: 0
-  animator: {fileID: 0}
+  animator: {fileID: 3211770461717812386}
 --- !u!61 &473060400
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2181,7 +2181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3211770461203563122, guid: 204f3686c62941e49b03c2c8e7051f4d, type: 3}
       propertyPath: thisLevel
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3211770461203563124, guid: 204f3686c62941e49b03c2c8e7051f4d, type: 3}
       propertyPath: m_RootOrder
@@ -2229,3 +2229,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 204f3686c62941e49b03c2c8e7051f4d, type: 3}
+--- !u!95 &3211770461717812386 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3211770461203563123, guid: 204f3686c62941e49b03c2c8e7051f4d, type: 3}
+  m_PrefabInstance: {fileID: 3211770461717812385}
+  m_PrefabAsset: {fileID: 0}

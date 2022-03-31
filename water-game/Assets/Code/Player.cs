@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour, IPlayer
 {
     public static Player Instance;
@@ -40,9 +41,9 @@ public class Player : MonoBehaviour, IPlayer
             UseEffect();
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            KillPlayer();
+            SceneManager.LoadScene(0);
         }
     }
 
