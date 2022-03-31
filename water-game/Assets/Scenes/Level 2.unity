@@ -180,10 +180,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f08f0a13f503045b0bda25d6912516, type: 3}
---- !u!95 &41305062 stripped
+--- !u!95 &78723325 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 663711297347241317, guid: 5a22f2b819845bf40a1722ab3d1eef12, type: 3}
-  m_PrefabInstance: {fileID: 341290476}
+  m_CorrespondingSourceObject: {fileID: 3211770461203563123, guid: 204f3686c62941e49b03c2c8e7051f4d, type: 3}
+  m_PrefabInstance: {fileID: 602845684}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &98940267 stripped
 Transform:
@@ -490,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4230962467237912065, guid: abce509add9dbb748a1e07ae2f433d8b, type: 3}
       propertyPath: m_Size.x
-      value: 1.19
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: 4230962467237912065, guid: abce509add9dbb748a1e07ae2f433d8b, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -522,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4230962467257782223, guid: abce509add9dbb748a1e07ae2f433d8b, type: 3}
       propertyPath: m_Size.x
-      value: 1.08
+      value: 0.78
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abce509add9dbb748a1e07ae2f433d8b, type: 3}
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisLevel: 1
-  animator: {fileID: 41305062}
+  animator: {fileID: 78723325}
 --- !u!61 &473060400
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2959,7 +2959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4230962467237912065, guid: abce509add9dbb748a1e07ae2f433d8b, type: 3}
       propertyPath: m_Size.x
-      value: 1.19
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: 4230962467237912065, guid: abce509add9dbb748a1e07ae2f433d8b, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -2991,7 +2991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4230962467257782223, guid: abce509add9dbb748a1e07ae2f433d8b, type: 3}
       propertyPath: m_Size.x
-      value: 1.08
+      value: 0.78
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abce509add9dbb748a1e07ae2f433d8b, type: 3}
