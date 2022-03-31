@@ -12,15 +12,12 @@ public class WaterShooter : Enemy
     [SerializeField] private int shootRate;
     [SerializeField] private float jumpSpeed;
 
-    [SerializeField] private bool facingRight;
+    public bool facingRight;
 
 
     private void Start()
     {
-        if (facingRight)
-        {
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1f);
-        }
+        Flip();
     }
 
     void FixedUpdate()
@@ -34,6 +31,18 @@ public class WaterShooter : Enemy
         {
             Shoot();
         }
+    }
+    
+
+    public void Flip()
+    {
+        //if (facingRight)
+        //{
+            //transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1f);
+            
+        //}
+
+        transform.eulerAngles = Vector3.up * (facingRight ? 0f : 180f);
     }
 
     private void Shoot()
